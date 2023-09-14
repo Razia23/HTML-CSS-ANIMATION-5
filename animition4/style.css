@@ -1,0 +1,158 @@
+/**** margin und padding habe ich 0px gemacht*****/
+body {
+    margin: 0px;
+    padding: 0px;
+}
+/****Im main habe ich grid mit 5 spalten gemacht.*****/
+main {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20%;
+    margin: 10px;
+    padding: 10px;
+    height: 600px;
+    background-image: conic-gradient(red, darkgray, gray, rgba(0, 255, 255, 0.571), white,yellow, silver, skyblue, darkgray, white);
+}
+/****musste man den element name für animation ein geben,
+am sonst funktioniert es nicht ohne name,der name später tragen 
+wir im @keyframe für weitere schritte*****/
+main img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50px;
+    animation-name: img;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    box-shadow: 0px 0px 20px black;
+}
+/**** hier liegt den bild's animation.scrold 360 degree*****/
+
+@keyframes img {
+    0% {
+        transform: rotate(0deg);
+        border-radius: 25%;
+    }
+    100% {
+        border-radius: 100%;
+        transform: rotate(360deg);
+    }
+}
+/**** Ich habe hier neben andere dinge mein animaton name
+gegeben.*****/
+
+main div {
+    padding: 10px;
+    margin: 10px;
+    width: 220px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: bewegungs;
+    animation-duration: 15s;
+    animation-direction: alternate-reverse;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+/****ab hier fingt die animation mein div an.*****/
+
+@keyframes bewegungs {
+    0% {
+        grid-column-start: 1;
+        border-radius: 10px;
+        grid-row-start: 1;
+        border-radius: 100%;
+        background-color: aqua;
+    }
+
+    6% {
+        grid-column-start: 2;
+        border-radius: 30px;
+        grid-row-start: 1;
+        background-color: blue;
+    }
+
+    12% {
+        grid-column-start: 3;
+        border-radius: 25px;
+        grid-row-start: 1;
+        background-color: blueviolet;
+    }
+
+    18% {
+        grid-column-start: 4;
+        border-radius: 50px;
+        grid-row-start: 1;
+    }
+
+    24% {
+        grid-column-start: 5;
+        border-radius: 10px;
+        grid-row-start: 1;
+    }
+
+    30% {
+        grid-column-start: 1;
+        border-radius: 10px;
+        grid-row-start: 2;
+    }
+
+    36% {
+        grid-column-start: 2;
+        border-radius: 10px;
+        grid-row-start: 2;
+        background-color: green;
+    }
+
+    42% {
+        grid-column-start: 3;
+        border-radius: 30px;
+        grid-row-start: 2;
+        background-color: yellow;
+    }
+
+    48% {
+        grid-column-start: 4;
+        border-radius: 10px;
+        grid-row-start: 2;
+    }
+
+    54% {
+        grid-column-start: 5;
+        border-radius: 50px;
+        grid-row-start: 2;
+    }
+
+    60% {
+        grid-column-start: 1;
+        border-radius: 10px;
+        grid-row-start: 3;
+    }
+
+    66% {
+        grid-column-start: 2;
+        border-radius: 40px;
+        grid-row-start: 3;
+    }
+
+    72% {
+        grid-column-start: 3;
+        border-radius: 10px;
+        grid-row-start: 3;
+    }
+
+    78% {
+        grid-column-start: 4;
+        border-radius: 50px;
+        grid-row-start: 3;
+    }
+
+    100% {
+        grid-column-start: 5;
+        border-radius: 100%;
+        grid-row-start: 3;
+    }
+}
